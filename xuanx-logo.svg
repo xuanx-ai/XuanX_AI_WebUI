@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 600" preserveAspectRatio="xMidYMid meet">
+  <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="butt" stroke-linejoin="miter">
+    <line x1="475" y1="225" x2="605" y2="375"></line>
+    <line x1="605" y1="225" x2="475" y2="375"></line>
+    <path d="M 655,225 L 655,310 A 65,65 0 0 0 785,310 L 785,225"></path>
+    <circle cx="900" cy="300" r="75"></circle>
+    <line x1="847" y1="247" x2="833" y2="233"></line>
+    <line x1="953" y1="353" x2="967" y2="367"></line>
+    <path d="M 1015,375 L 1015,290 A 65,65 0 0 1 1145,290 L 1145,375"></path>
+    <line x1="1195" y1="225" x2="1325" y2="375"></line>
+    <line x1="1325" y1="225" x2="1195" y2="375"></line>
+  </g>
+  <g fill="currentColor" stroke="none">
+    <circle cx="833" cy="233" r="10"></circle>
+    <circle cx="967" cy="367" r="10"></circle>
+  </g>
+</svg>

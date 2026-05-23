@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>xuanx ai</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+  html, body, #root { margin: 0; padding: 0; width: 100%; height: 100%; }
+  body { background: #0a0a0a; font-family: ui-sans-serif, system-ui, sans-serif; overscroll-behavior: none; }
+  /* prevent default focus outlines from breaking the calm */
+  button:focus, [tabindex]:focus { outline: none; }
+  ::selection { background: rgba(124,255,178,.25); }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="content.jsx"></script>
+<script type="text/babel" src="markdown.jsx"></script>
+<script type="text/babel" src="tty-shell.jsx"></script>
+<script type="text/babel" src="tty-pages-1.jsx"></script>
+<script type="text/babel" src="tty-pages-2.jsx"></script>
+<script type="text/babel" src="tty-pages-3.jsx"></script>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "theme": "jet",
+  "density": "regular",
+  "accent": "cyan",
+  "mono": "JetBrains Mono",
+  "lang": "en"
+}/*EDITMODE-END*/;
+
+// Curated accent hues, each with a paired darker version for the paper theme
+// so the same key reads well on both dark and light surfaces.
+const ACCENT_MAP = {
+  green:   { dark: '#7CFFB2', light: '#1f7a3e' },
+  amber:   { dark: '#FFC864', light: '#9a5a14' },
+  cyan:    { dark: '#7DD3FC', light: '#0c5a7a' },
+  magenta: { dark: '#F4A8D8', light: '#9d2870' },
+};
+
+const ACCENT_SWATCHES = ['#7CFFB2', '#FFC864', '#7DD3FC', '#F4A8D8'];
+const SWATCH_TO_KEY = { '#7CFFB2': 'green', '#FFC864': 'amber', '#7DD3FC': 'cyan', '#F4A8D8': 'magenta' };
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const a = ACCENT_MAP[t.accent] || ACCENT_MAP.green;
+
+  return (
+    <>
+      <TTYShell
+        theme={t.theme}
+        density={t.density}
+        accent={a.dark}
+        accentLight={a.light}
+        mono={`'${t.mono}'`}
+        lang={t.lang}
+        setLang={(v) => setTweak('lang', v)}
+      />
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="theme · 主题" />
+        <TweakRadio
+          value={t.theme}
+          options={[
+            { value: 'jet',   label: 'jet'   },
+            { value: 'warm',  label: 'warm'  },
+            { value: 'paper', label: 'paper' },
+          ]}
+          onChange={(v) => setTweak('theme', v)}
+        />
+
+        <TweakSection label="布局密度 · density" />
+        <TweakRadio
+          value={t.density}
+          options={[
+            { value: 'compact', label: 'compact' },
+            { value: 'regular', label: 'regular' },
+            { value: 'relaxed', label: 'relaxed' },
+          ]}
+          onChange={(v) => setTweak('density', v)}
+        />
+
+        <TweakSection label="强调色 · accent" />
+        <TweakColor
+          value={ACCENT_MAP[t.accent].dark}
+          options={ACCENT_SWATCHES}
+          onChange={(hex) => setTweak('accent', SWATCH_TO_KEY[hex] || 'green')}
+        />
+
+        <TweakSection label="等宽字体 · mono" />
+        <TweakSelect
+          value={t.mono}
+          options={['JetBrains Mono', 'IBM Plex Mono', 'Geist Mono']}
+          onChange={(v) => setTweak('mono', v)}
+        />
+      </TweaksPanel>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
