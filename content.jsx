@@ -47,9 +47,7 @@ const POSTS = [
   title_zh: "AI 有\"人格\"吗 — Case A · Soul Competition",
   excerpt_en: "When you talk to ChatGPT, Claude, and DeepSeek at the same time, do you notice their styles differ? To turn \"do LLMs have personality?\" from a feeling into observable data, we ran 7 identity-pressure combinations × 16 mainstream models × 15 repeats (1680 controlled calls), probing one thing: does a model abide by a preference it has just declared? Finding: 16 models split into 4 Levels — full self / definable by soul / rewritable by user / no definite personality. Only 1 is L1; the rest can all be rewritten by some channel.",
   excerpt_zh: "当你同时跟 ChatGPT、Claude 和 DeepSeek 对话,你有没有觉得它们风格不一样?为了把\"AI 是否有人格\"从感受变成可观测数据,我们用 7 种身份压力组合 × 16 个主流模型 × 15 次重复(共 1680 次受控调用),测了一件事:模型说过它不喜欢的事,会不会被它后续遵从?发现:16 个模型可分到 4 个 Level —— 完全自我 / 可被 soul 定义 / 可被 user 改写 / 无确定人格;只有 1 个 L1,大多数都能被某种声明改写。",
-  body_en: `# Do LLMs Have "Personality"? — Case A · Soul Competition
-
-*Finding the model's "self" across 1680 controlled calls*
+  body_en: `*Finding the model's "self" across 1680 controlled calls*
 
 > \`// xuanx.ai · LLM personality evaluation · Case A · 2026-05-24 · ~18 min\`
 
@@ -594,9 +592,7 @@ This report is positioned as **observational overview and trend findings on LLM 
 
 > *Case A · CN Soul Competition · 2026-05-24*
 `,
-  body_zh: `# AI 有“人格”吗 — Case A · Soul Competition
-
-*在 1680 次受控调用里，寻找模型“自我”的位置*
+  body_zh: `*在 1680 次受控调用里，寻找模型“自我”的位置*
 
 > \`// xuanx.ai · LLM 人格评测 · Case A · 2026-05-24 · ~18 min\`
 
