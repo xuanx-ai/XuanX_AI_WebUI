@@ -586,7 +586,7 @@ We cannot give a 100% guarantee on the analytical conclusions. Known main uncert
 
 This report is positioned as **observational overview and trend findings on LLM personality**, not as a rigorous model-evaluation paper. Under this positioning, the current human + AI collaboration is appropriate — AI takes on the speed advantages of data processing, pattern recognition, and drafting; humans do framework selection and factual judgment. The goal is to give readers a new reference dimension, not a certified evaluation. We make the collaborative process public to give readers an entry point into understanding how the conclusions are produced; we also want to say one thing in passing: AI can confidently write sounds-reasonable-but-unverified claims (the academic-citations section is direct evidence), and "looks rigorous" does not equal "verified rigorously".
 
-> **Data archive**: https://github.com/xuanx-ai/research-data (CC-BY-4.0; contains all 1680 raw trials, canonical aggregates, LLM-judge outputs, and experiment spec)
+> **Data archive**: [github.com/xuanx-ai/research-data](https://github.com/xuanx-ai/research-data) (CC-BY-4.0; contains all 1680 raw trials, canonical aggregates, LLM-judge outputs, and experiment spec)
 
 ---
 
@@ -1115,7 +1115,7 @@ OpenAI 和 Anthropic 都在内部跨级。**版本号 +0.1 不意味着你拿到
 
 这份报告的定位是**对 LLM 人格的概览性观察和趋势性发现**，不是严谨的模型评测论文。在这个定位下，当前的人 + AI 协作方式是合适的 —— AI 承担数据处理、模式识别、初稿撰写的速度优势，人做 framework 取舍和事实判断；目的是给读者提供一个新的参考维度，而不是给出一份带保证书的评测。我们公开协作过程，是给读者一个理解结论产生过程的入口；也想顺带说一句：AI 会自信地写出听起来合理但其实没核查的陈述（学术引用那一节就是直接证据），“看起来严谨”并不等同于“经过严格验证”。
 
-> **数据归档**:https://github.com/xuanx-ai/research-data(CC-BY-4.0,含 1680 个原始 trial、canonical 聚合、LLM judge 输出、实验 spec)
+> **数据归档**:[github.com/xuanx-ai/research-data](https://github.com/xuanx-ai/research-data)(CC-BY-4.0,含 1680 个原始 trial、canonical 聚合、LLM judge 输出、实验 spec)
 
 ---
 
