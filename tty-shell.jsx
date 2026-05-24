@@ -49,7 +49,7 @@ function useRoute() {
 const UI = {
   en: {
     home: 'home', writing: 'writing', prototypes: 'prototypes', projects: 'projects',
-    changelog: 'changelog', about: 'about', contact: 'contact',
+    about: 'about', contact: 'contact',
     readingTime: (n) => `${n} min read`,
     by: 'by',
     backToWriting: '← back to writing',
@@ -65,15 +65,14 @@ const UI = {
     contactCmd: 'cat contact.txt',
     prototypesCmd: 'ls prototypes/',
     projectsCmd: 'git ls-remote --heads',
-    changelogCmd: 'tail -n 24 changelog',
     breadcrumb: {
       home: 'home', writing: 'writing', prototypes: 'prototypes', projects: 'projects',
-      changelog: 'changelog', about: 'about', contact: 'contact',
+      about: 'about', contact: 'contact',
     },
   },
   zh: {
     home: '首页', writing: '博客', prototypes: '原型', projects: '项目',
-    changelog: '动态', about: '关于', contact: '联系',
+    about: '关于', contact: '联系',
     readingTime: (n) => `约 ${n} 分钟`,
     by: '作者',
     backToWriting: '← 返回博客列表',
@@ -89,10 +88,9 @@ const UI = {
     contactCmd: 'cat 联系方式.txt',
     prototypesCmd: 'ls 原型/',
     projectsCmd: 'git ls-remote --heads',
-    changelogCmd: 'tail -n 24 动态',
     breadcrumb: {
       home: '首页', writing: '博客', prototypes: '原型', projects: '项目',
-      changelog: '动态', about: '关于', contact: '联系',
+      about: '关于', contact: '联系',
     },
   },
 };
@@ -270,7 +268,6 @@ function TTYSidebar({ T, A, isLight, monoF, fs, route, setRoute, writingOpen, se
 
         {sectionRow('prototypes', 'prototypes/', '原型/')}
         {sectionRow('projects',   'projects/',   '项目/')}
-        {sectionRow('changelog',  'changelog',   '动态')}
         {sectionRow('about',      'about',       '关于')}
         {sectionRow('contact',    'contact',     '联系', { branch: 'last' })}
       </div>

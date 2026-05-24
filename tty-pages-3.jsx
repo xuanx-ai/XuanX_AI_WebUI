@@ -1,78 +1,4 @@
-// xuanx ai — page components, part 3: changelog, about, contact.
-
-function ChangelogPage(p) {
-  const { T, A, monoF, serif, fs, pad, itemGap, isEN, t } = p;
-  // Single-language entries — keep this short and current. Edit as needed.
-  const feed = [
-    { date: '2026-05-17', kind: 'post',
-      text_en: 'New essay: Mission & Worldview',
-      text_zh: '新文：使命与世界观',
-      detail_en: 'A statement of what xuanx.ai is for, and the worldview behind it.',
-      detail_zh: '关于 xuanx.ai 在做什么、背后的世界观是什么。'
-    },
-    { date: '2026-05-15', kind: 'release',
-      text_en: 'xuanx.ai site v0.4.1',
-      text_zh: 'xuanx.ai 网站 v0.4.1',
-      detail_en: 'New: bilingual UI, GitHub-backed projects page, prototype scaffold.',
-      detail_zh: '新增：双语 UI、Projects 页接 GitHub、原型 scaffold。'
-    },
-  ];
-  const kindColor = (k) => k === 'release' ? A : k === 'post' ? T.ink : T.dim;
-  return (
-    <>
-      <Breadcrumb {...p} parts={[t.breadcrumb.changelog]} cmd={t.changelogCmd} />
-      <div style={{ padding: `${pad + 12}px ${pad}px ${pad + 24}px`, maxWidth: 900 }}>
-        <PageHead {...p}
-          kicker={isEN ? 'changelog' : '动态'}
-          title={isEN ? 'changelog' : '动态'}
-          subtitle={isEN
-            ? 'What shipped, what we wrote, what we noticed.'
-            : '我们发布了什么、写了什么、注意到了什么。'
-          }
-        />
-
-        <div style={{ position: 'relative', paddingLeft: 22 }}>
-          {/* timeline rail */}
-          <div style={{
-            position: 'absolute', left: 6, top: 6, bottom: 6,
-            width: 1, background: T.rule,
-          }} />
-          {feed.map((c, i) => (
-            <div key={i} style={{
-              position: 'relative',
-              padding: `${itemGap}px 0`,
-            }}>
-              <div style={{
-                position: 'absolute', left: -22, top: itemGap + 6,
-                width: 13, height: 13,
-                background: T.panel,
-                border: `1.5px solid ${kindColor(c.kind)}`,
-                borderRadius: c.kind === 'release' ? '50%' : 2,
-              }} />
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginBottom: 4, flexWrap: 'wrap' }}>
-                <span style={{ fontFamily: monoF, fontSize: fs - 2, color: T.dim }}>{c.date}</span>
-                <span style={{
-                  fontFamily: monoF, fontSize: 10, letterSpacing: '.14em', textTransform: 'uppercase',
-                  color: kindColor(c.kind),
-                  border: `1px solid ${kindColor(c.kind)}55`,
-                  padding: '2px 7px', borderRadius: 2,
-                }}>{c.kind}</span>
-              </div>
-              <div style={{ fontFamily: monoF, fontSize: fs + 2, color: T.ink, marginTop: 4 }}>
-                {isEN ? c.text_en : c.text_zh}
-              </div>
-              {c.detail_en && (
-                <div style={{ marginTop: 10, fontFamily: serif, fontSize: fs + 1, color: T.dim, lineHeight: 1.55, maxWidth: 660 }}>
-                  {isEN ? c.detail_en : c.detail_zh}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
-  );
-}
+// xuanx ai — page components, part 3: about, contact.
 
 function AboutPage(p) {
   const { T, A, monoF, serif, fs, pad, sectGap, isEN, t } = p;
@@ -265,6 +191,5 @@ function ContactPage(p) {
   );
 }
 
-window.ChangelogPage = ChangelogPage;
 window.AboutPage = AboutPage;
 window.ContactPage = ContactPage;

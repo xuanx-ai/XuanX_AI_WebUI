@@ -11,7 +11,6 @@ function TTYPage(p) {
   if (route.section === 'writing')    return route.slug ? <PostPage {...p} /> : <WritingIndex {...p} />;
   if (route.section === 'prototypes') return <PrototypesPage {...p} />;
   if (route.section === 'projects')   return <ProjectsPage {...p} />;
-  if (route.section === 'changelog')  return <ChangelogPage {...p} />;
   if (route.section === 'about')      return <AboutPage {...p} />;
   if (route.section === 'contact')    return <ContactPage {...p} />;
   return <HomePage {...p} />;

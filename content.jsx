@@ -1304,19 +1304,11 @@ const PROTOTYPES = [
   // { name: 'conversation-graph', tag: 'WIP', url: 'https://...', desc_en: 'chats as a navigable DAG, not a linear scroll', desc_zh: '把对话视为可导航的有向图，而非线性滚动' },
 ];
 
-const CHANGELOG = [
-  { date: '2026-05-15', kind: 'release', text_en: 'inkwell v0.4 — inline AI insertions',         text_zh: 'inkwell v0.4 — 行内 AI 插入' },
-  { date: '2026-05-04', kind: 'release', text_en: 'spool 0.9 supports the OpenAI batch API',     text_zh: 'spool 0.9 支持 OpenAI batch API' },
-  { date: '2026-04-28', kind: 'build',   text_en: 'whisper-stream now has a WASM build',         text_zh: 'whisper-stream 新增 WASM 构建' },
-  { date: '2026-04-19', kind: 'post',    text_en: 'three new essays in the Notes section',      text_zh: '《笔记》区新发三篇文章' },
-];
-
 const SECTIONS = [
   { id: 'home',       en: 'home',       zh: '首页' },
   { id: 'blog',       en: 'blog',       zh: '博客' },
   { id: 'prototypes', en: 'prototypes', zh: '原型' },
   { id: 'projects',   en: 'projects',   zh: '项目' },
-  { id: 'changelog',  en: 'changelog',  zh: '动态' },
   { id: 'about',      en: 'about',      zh: '关于' },
   { id: 'contact',    en: 'contact',    zh: '联系' },
 ];
@@ -1368,4 +1360,4 @@ const NOW = [
   { en: 'open to: conversations, not pitches',            zh: '欢迎：对话，而不是 pitch' },
 ];
 
-Object.assign(window, { META, POSTS, PROJECTS, PROTOTYPES, CHANGELOG, SECTIONS, ABOUT, NOW, TOPICS });
+Object.assign(window, { META, POSTS, PROJECTS, PROTOTYPES, SECTIONS, ABOUT, NOW, TOPICS });
